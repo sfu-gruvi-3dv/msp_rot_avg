@@ -1,0 +1,18 @@
+{
+    "clean_cache": false,
+    "valid":
+    {
+        "1dsfm_five_new":{
+            "dataset_list" : ["Montreal_Notre_Dame"],
+            "img_max_dim": 400,
+            "sub_graph_nodes": 180,
+            "sample_res_cache":"test_Montreal_Notre_Dame_180nodes.bin",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false,
+            "node_edge_lmdb_name": "test_Montreal_Notre_Dame_180nodes_feats.lmdb",
+            "subgraph_edge_cover_ratio": 0.1
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "baseDir": "/mnt/Tango/pg/Ambi",
+    "names": ["cup", "books", "cereal", "desk", "oats", "street"],
+    "dataset": {
+        "cup": {
+            "dataDir": "./cup",
+            "bundle_file": "Models_0423_MC_GL_withBA_0.1_DV0.05_30/model000/bundle_00064.out",
+            "imageList": "./ImageList.txt",
+            "EGs": "EGs.txt",
+            "calibration": "calibration.txt",
+            "listFocal": "list_focal.txt",
+            "matches": "matches.txt"
+        },
+        "books": {
+            "dataDir": "./books",
+            "bundle_file": "Models_0423_MC_GL_withBA_0.1_DV0.05_30/model000/bundle_00021.out",
+            "imageList": "./ImageList.txt",
+            "EGs": "EGs.txt",
+            "calibration": "calibration.txt",
+            "listFocal": "list_focal.txt",
+            "matches": "matches.txt"
+        },
+        "cereal": {
+            "dataDir": "./cereal",
+            "bundle_file": "Models_0423_MC_GL_withBA_0.1_DV0.05_30/model000/bundle_00025.out",
+            "imageList": "./ImageList.txt",
+            "EGs": "EGs.txt",
+            "calibration": "calibration.txt",
+            "listFocal": "list_focal.txt",
+            "matches": "matches.txt"
+        },
+        "desk": {
+            "dataDir": "./desk",
+            "bundle_file": "Models_0423_MC_GL_withBA_0.1_DV0.05_30/model000/bundle_00031.out",
+            "imageList": "./ImageList.txt",
+            "EGs": "EGs.txt",
+            "calibration": "calibration.txt",
+            "listFocal": "list_focal.txt",
+            "matches": "matches.txt"
+        },
+        "oats": {
+            "dataDir": "./oats",
+            "bundle_file": "Models_0423_MC_GL_withBA_0.1_DV0.05_30/model000/bundle_00024.out",
+            "imageList": "./ImageList.txt",
+            "EGs": "EGs.txt",
+            "calibration": "calibration.txt",
+            "listFocal": "list_focal.txt",
+            "matches": "matches.txt"
+        },
+        "street": {
+            "dataDir": "./street",
+            "bundle_file": "Models_0423_MC_GL_withBA_0.1_DV0.05_30/model000/bundle_00019.out",
+            "imageList": "./ImageList.txt",
+            "EGs": "EGs.txt",
+            "calibration": "calibration.txt",
+            "listFocal": "list_focal.txt",
+            "matches": "matches.txt"
+            
+        }
+    }
+}

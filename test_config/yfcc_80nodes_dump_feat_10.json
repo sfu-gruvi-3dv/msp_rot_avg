@@ -1,0 +1,23 @@
+{
+    "clean_cache": false,
+
+    "valid":
+    {
+        "yfcc":{
+            "dataset_list" : [
+                "palazzo_pubblico"
+            ],
+            "node_edge_lmdb_path": "80node_valid_yfcc_pb_lmdb.bin",
+            "node_edge_lmdb_name": "80node_valid_yfcc_pb_lmdb.lmdb",
+            "img_max_dim": 400,
+            "sampling_num_range": [80,100],
+            "sub_graph_nodes": 80,
+            "sample_res_cache": "80node_valid_yfcc_pb.bin",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false,
+            "subgraph_edge_cover_ratio": 0.2
+         }
+    }
+}
