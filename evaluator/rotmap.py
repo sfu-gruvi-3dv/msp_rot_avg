@@ -5,6 +5,9 @@ import random
 
 from torch._C import dtype
 torchpi = torch.acos(torch.zeros(1)).item() * 2
+
+# original implementation from Chatterjee's ICCV13 paper: CompareRotationGraph.m
+
 def R2w(R):
     w = torch.stack((R[2,1] - R[1,2], R[0,2] - R[2,0], R[1,0]- R[0,1])) / 2
     s = torch.norm(w)
