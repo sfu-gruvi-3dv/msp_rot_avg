@@ -21,6 +21,7 @@ from exp.rot_avg_refined_finenet import *
 """ Configuration -------------------------------------------------------------------------------------------------------
 """
 # todo: modify following
+# json_file_path = './train_config/onedsfm_part1_80node.json'
 json_file_path = './train_config/yfcc_3_80nodes.json'
 
 delete_lmdb = True

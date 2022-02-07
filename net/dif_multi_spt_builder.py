@@ -6,44 +6,6 @@ import torch_geometric
 import numpy as np
 from core_3dv.quaternion import *
 
-import numpy
-import numpy.matlib as npm
-import torch
-
-def weightedAverageQuaternions(Q, w):
-    # Number of quaternions to average
-    M = Q.shape[0]
-    A = npm.zeros(shape=(4,4))
-    weightSum = 0
-
-    for i in range(0,M):
-        q = Q[i,:]
-        A = w[i] * numpy.outer(q,q) + A
-        weightSum += w[i]
-
-    # scale
-    A = (1.0/weightSum) * A
-
-    # compute eigenvalues and -vectors
-    eigenValues, eigenVectors = numpy.linalg.eig(A)
-
-    # Sort by largest eigenvalue
-    eigenVectors = eigenVectors[:,eigenValues.argsort()[::-1]]
-
-    # return the real part of the largest eigenvector (has only real part)
-    return numpy.real(eigenVectors[:, 0].A1), A
-
-def weightedAverageQuaternion_torch(Q, w):
-    w = w.view(-1)
-    M = Q.shape[0]
-    weightSum = torch.sum(w)
-
-    A = torch.cat([(w[i] * torch.ger(Q[i, :], Q[i, :])).view(1, -1) for i in range(M)], dim=0)
-    A = torch.sum(A, dim=0).view(4, 4)
-    A = (1.0 / weightSum) * A
-    _, evec = torch.symeig(A, eigenvectors=True)        # the last one has the largest eigen value
-
-    return evec[:, -1]
 
 def weightedAverageQuaternion_(Q, w):
     w = w.view(-1)

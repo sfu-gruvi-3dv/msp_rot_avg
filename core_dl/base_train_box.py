@@ -411,34 +411,10 @@ class BaseTrainBox:
 
     def report(self):
 
-        self.print_protected_god_animal()
+        if self.train_params.VERBOSE_MODE:
+            print("[Training Parameters Overview] ------------------------------------------------------------------------")
+            self.train_params.report()
 
-        print("[Training Parameters Overview] ------------------------------------------------------------------------")
-        self.train_params.report()
-
-        print("[Optimizer Overview] ----------------------------------------------------------------------------------")
-        if self.optimizer is not None:
-            print("[%s] Start learning rate: %f" % (type(self.optimizer), dl_util.get_learning_rate(self.optimizer)))
-
-    @staticmethod
-    def print_protected_god_animal():
-        print(Back.GREEN + " ## ┏━━ FORGIVE HAT ━━┓##" + Style.RESET_ALL)
-        god = " #    ┏┓     ┏┓  \n" \
-              " #   ┏┛┻━━━━━┛┻┓ \n" \
-              " #   ┃         ┃ \n" \
-              " #   ┃    ━    ┃ \n" \
-              " #   ┃ ┳┛   ┗┳ ┃ \n" \
-              " #   ┃         ┃ \n" \
-              " #   ┃    ┻    ┃ \n" \
-              " #   ┃         ┃ \n" \
-              " #   ┗━┓     ┏━┛ \n" \
-              " #     ┃     ┃   \n" \
-              " #     ┃     ┃   \n" \
-              " #     ┃     ┗━━━┓  \n" \
-              " #     ┃         ┣┓ \n" \
-              " #     ┃         ┏┛ \n" \
-              " #     ┗┓┓┏━━┳┓┏━┛  \n" \
-              " #      ┃┫┫  ┃┫┫    \n" \
-              " #      ┗┻┛  ┗┻┛    \n";
-        print(god)
-        print(Back.GREEN + " ## This code is far away from bug with the animal protecting ##" + Style.RESET_ALL)
+            print("[Optimizer Overview] ----------------------------------------------------------------------------------")
+            if self.optimizer is not None:
+                print("[%s] Start learning rate: %f" % (type(self.optimizer), dl_util.get_learning_rate(self.optimizer)))

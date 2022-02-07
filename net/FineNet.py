@@ -5,8 +5,8 @@
 
 
 import torch 
-from torch_geometric.datasets import TUDataset
-from torch_geometric.data import DataLoader, Data
+# from torch_geometric.datasets import TUDataset
+# from torch_geometric.data import DataLoader, Data
 import h5py
 import os
 os.environ["TF_CPP_MIN_LOG_LEVEL"]="3"
@@ -92,6 +92,7 @@ def inv_q(q):
 
 
 from torch.nn import Sequential as Seq, Linear, ReLU, BatchNorm1d as BN, Dropout
+
 from torch_geometric.nn import MessagePassing
 
 class EdgeConvRot(MessagePassing):
@@ -107,7 +108,7 @@ class EdgeConvRot(MessagePassing):
         return self.propagate(edge_index, size=(x.size(0), x.size(0)), x=x, edge_attr=edge_attr)
 
     def message(self, x_i, x_j, edge_attr): 
-        W = torch.cat([torch.cat([x_i, x_j], dim=1), edge_attr], dim=1)  # tmp has shape [E, 2 * in_channels]
+        W = torch.cat([torch.cat([x_i, x_j], dim=1), edge_attr], dim=1)  # tmp has shape [E, 2 * in_channels]nvidia
         W = self.mlp(W) 
         return W
             

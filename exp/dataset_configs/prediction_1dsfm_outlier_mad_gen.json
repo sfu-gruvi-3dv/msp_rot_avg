@@ -1,0 +1,22 @@
+{
+    "clean_cache": false,
+    "train":
+    {
+    },
+    "valid":
+    {
+        "1dsfm":{
+            "dataset_list" : ["Madrid_Metropolis",
+                "Gendarmenmarkt"],
+            "node_edge_lmdb_path": null,
+            "img_max_dim": 400,
+            "sampling_num_range": [50,100],
+            "sub_graph_nodes": 50,
+            "sample_res_cache": "valid_1dsfm_mad_gen.bin",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false
+        }
+    }
+}

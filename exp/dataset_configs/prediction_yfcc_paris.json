@@ -1,0 +1,21 @@
+{
+    "clean_cache": false,
+    "train":
+    {
+    },
+    "valid":
+    {
+        "yfcc":{
+            "dataset_list" : ["sagrada_familia_1"],
+            "node_edge_lmdb_path": null,
+            "img_max_dim": 400,
+            "sampling_num_range": [50,100],
+            "sub_graph_nodes": 50,
+            "sample_res_cache": "valid_yfcc_sag_fam_1.bin",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false
+        }
+    }
+}

@@ -1,6 +1,7 @@
 from data.capture.capture_dataset_utils import *
 from graph_utils.subgraph_sampler import SubgraphGenerator
 import shutil
+from data.rotmap import w2R
 # preset for different type of dataset
 data_meta_dict = {
     'bundle': {
@@ -55,7 +56,9 @@ class SupergraphDataset(Dataset):
                  load_keypt_match=False,
                  load_node_edge_feat=False,
                  transform_func='default',
-                 subgraph_edge_cover_ratio=0.4):
+                 subgraph_edge_cover_ratio=0.4,
+                 noise=10,
+                 error=0.05):
 
         self.num_dataset = len(dataset_list)
         self.dataset_dir = dataset_dir
@@ -65,6 +68,8 @@ class SupergraphDataset(Dataset):
         self.load_keypt_match = load_keypt_match
         self.load_node_edge_feat = load_node_edge_feat
         self.use_lmdb = False
+        self.noise = noise
+        self.error = error
 
         if self.load_node_edge_feat is True:
             if node_edge_lmdb_path is None:
@@ -218,7 +223,33 @@ class SupergraphDataset(Dataset):
         print('[SuperGraph Init] Done, %d samples' % len(self.samples))
 
         # random.shuffle(self.samples)
+        self.noise_list = dict()
+        sigma = self.noise * math.pi /180 / math.sqrt(3)
+        for dataset in list(self.edge_local_feat_cache.keys()):
+            edge_local_feat_cache_now = self.edge_local_feat_cache[dataset]
+            edge_local_feat_cache_new = dict()
+            Es = self.Es[dataset]
+            key_list = list(edge_local_feat_cache_now.keys())
+            self.noise_list[dataset] = random.sample(key_list, int(len(key_list)*self.error))
+            for key, val in edge_local_feat_cache_now.items():
+                n1 = int(key.split("-")[0])
+                n2 = int(key.split("-")[1])
+                E1 = Es[n1][:,:3]
+                E2 = Es[n2][:,:3]
+                new_rel_R = np.matmul(E1,E2.T)
+                w = torch.from_numpy(np.random.normal(0,1,[3]))
+                w = w / torch.norm(w)*sigma*torch.from_numpy(np.random.normal(0,1,[1])) / 10
+                y = 2 * (random.random() - 0.5)
+                w2 =  torch.from_numpy(np.asarray([y, math.sqrt(1 - y*y), 0])*sigma*random.gauss(0,1))
+                new_rel_R = torch.from_numpy(new_rel_R).type(torch.float64)
+                new_rel_R = torch.mm(new_rel_R, w2R(w2))
+                new_rel_R = torch.mm(new_rel_R, w2R(w))
 
+                if key in self.noise_list[dataset]:
+                    new_rel_R = w2R(torch.from_numpy((random.gauss(0,1)*90*pi/180/sqrt(3))*np.random.normal(0,1,[3])))
+                val["Rt"][:,:3] = new_rel_R.numpy()
+                edge_local_feat_cache_new[key] = val
+            self.edge_local_feat_cache[dataset] = edge_local_feat_cache_new
     def __len__(self):
         return len(self.samples)
 
@@ -235,6 +266,17 @@ class SupergraphDataset(Dataset):
         edge_local_feat_cache = self.edge_local_feat_cache[dataset_name]
         inoutMat = self.inout_mat[dataset_name]
         id2valid_id = self.id2valid_id[dataset_name]
+
+        # if len(self.noise_list) == 0:
+        #     key_list = list(edge_local_feat_cache.keys())
+        #     self.noise_list = random.sample(key_list, int(len(key_list) * self.noise))
+        #     for key in self.noise_list:
+        #         Rt = edge_local_feat_cache[key]['Rt']
+        #         R = Rt[:,:3]
+        #         R = torch.mm(torch.from_numpy(R).type(torch.float64), w2R(torch.rand(3)))
+        #         Rt[:,:3] = R.numpy()
+        #         edge_local_feat_cache[key]['Rt'] = Rt
+
 
         subgraph_edges = subgraphs[sub_graph_id]
         subgraph_nodes = []
@@ -346,6 +388,7 @@ class SupergraphDataset(Dataset):
         edge_rel_Rt = []
         edge_rel_err = []
         edge_feats = []
+
 
         for i, edge in enumerate(subgraph_edges):
             # remap index to subgraph

@@ -7,7 +7,7 @@ import torch.nn.functional as F
 import torch.utils.data.dataloader
 from core_dl.train_params import TrainParameters
 from core_dl.base_train_box import BaseTrainBox
-from dbg.dbg_generate_spt_by_w import generate_spt_by_w,generate_mst_by_w
+from exp.generate_spt_by_w import generate_spt_by_w,generate_mst_by_w
 from core_dl.torch_vision_ext import *
 from torchvision.utils import make_grid
 from core_dl.module_util import load_checkpoints, save_checkpoint, load_state_dict_by_key
@@ -20,20 +20,20 @@ from net.dif_multi_spt_builder import SptPropagate
 from net.FineNet import Net_outlier_det
 import random
 from data.edge_filtering import filtering
-from dbg.supergraph_helper import *
+from pipeline.supergraph_helper import *
 # dataset utils
 from data.ambi.ambi_dataset import imgs2batchsamesize
 from net.adjmat2dgl_graph import build_graph, adjmat2graph, gather_edge_feat, gather_edge_label, inv_adjmat, \
     gather_edge_feat2
 # network
-from vlad_encoder import VLADEncoder
+from net.vlad.vlad_encoder import VLADEncoder
 from net.gat_net import MultiGATBaseConvs, EdgeClassifier, EdgeClassifier2
 from net.mlp import SharedMLP
 from scipy.cluster.vq import kmeans2
 import torch.nn.functional as F
 import graph_utils.utils as graph_util
 from core_3dv.quaternion import *
-import torchgeometry as tgm
+# import torchgeometry as tgm
 import net.rot_avg_layers as r_opt
 from evaluator.basic_metric import rel_R_deg
 from torch.autograd.variable import Variable
@@ -135,8 +135,6 @@ class LocalGlobalVLADTrainBox(BaseTrainBox):
         # config the network structure for training
         super(LocalGlobalVLADTrainBox, self)._set_network()
         with torch.cuda.device(self.dev_ids[0]):
-            
-            # AGF Network
             if not self.use_vae:
                 self.appear_w = AppearanceFusion(in_node_feat=2048, in_edge_feat=512+4).cuda()
             else:

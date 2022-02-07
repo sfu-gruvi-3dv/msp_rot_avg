@@ -1,0 +1,22 @@
+{
+    "clean_cache": false,
+    "train":
+    {
+        "1dsfm":{
+            "dataset_list" : ["Alamo"
+        ],
+            "node_edge_lmdb_path": null,
+            "img_max_dim": 400,
+            "sampling_num_range": [50,1000],
+            "sub_graph_nodes": 50,
+            "sample_res_cache": "outlier_75_train_1dsfm.bin",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false
+        }
+    },
+    "valid":
+    {
+    }
+}

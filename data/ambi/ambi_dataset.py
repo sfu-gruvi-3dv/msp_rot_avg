@@ -11,7 +11,7 @@ from core_io.ply_io import load_pointcloud_from_ply
 from data.ambi.read_helper import *
 from data.ambi.ambi_parser import *
 from evaluator.basic_metric import rel_distance, rel_rot_angle
-from sampling import *
+from data.sampling import *
 
 
 # %%

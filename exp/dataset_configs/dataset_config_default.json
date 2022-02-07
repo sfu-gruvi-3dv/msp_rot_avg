@@ -1,0 +1,354 @@
+{
+      "yfcc": {
+        "res_dir": "./models/yfcc",
+        "img_dir": "./models/yfcc",
+        "lmdb_cache": [
+            "./models/yfcc/cache.lmdb",
+            "./models/yfcc/cache_meta.bin"
+        ],
+        "sampled_subgraph_dir": "./models/yfcc/",
+        "node_edge_feat_dir": "./models/yfcc/",
+        "dataset_list": [
+            {
+                "name": "blue_mosque_interior_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 166
+            },
+            {
+                "name": "westminster_abbey_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 738
+            },
+            {
+                "name": "sagrada_familia_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 186
+            },
+            {
+                "name": "st_peters_square",
+                "bundle_prefix": "yfcc",
+                "valid_num": 2264
+            },
+            {
+                "name": "grand_place_brussels_3",
+                "bundle_prefix": "yfcc",
+                "valid_num": 239
+            },
+            {
+                "name": "sistine_chapel_ceiling_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 78
+            },
+            {
+                "name": "old_town_square_prague",
+                "bundle_prefix": "yfcc",
+                "valid_num": 1100
+            },
+            {
+                "name": "statue_of_liberty_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 90
+            },
+            {
+                "name": "milan_cathedral",
+                "bundle_prefix": "yfcc",
+                "valid_num": 117
+            },
+            {
+                "name": "hagia_sophia_interior",
+                "bundle_prefix": "yfcc",
+                "valid_num": 827
+            },
+            {
+                "name": "paris_opera_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 195
+            },
+            {
+                "name": "colosseum_exterior",
+                "bundle_prefix": "yfcc",
+                "valid_num": 1881
+            },
+            {
+                "name": "taj_mahal_entrance",
+                "bundle_prefix": "yfcc",
+                "valid_num": 68
+            },
+            {
+                "name": "pieta_michelangelo",
+                "bundle_prefix": "yfcc",
+                "valid_num": 134
+            },
+            {
+                "name": "natural_history_museum_london",
+                "bundle_prefix": "yfcc",
+                "valid_num": 43
+            },
+            {
+                "name": "london_bridge_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 196
+            },
+            {
+                "name": "temple_kyoto_japan",
+                "bundle_prefix": "yfcc",
+                "valid_num": 274
+            },
+            {
+                "name": "united_states_capitol_rotunda",
+                "bundle_prefix": "yfcc",
+                "valid_num": 251
+            },
+            {
+                "name": "united_states_capitol",
+                "bundle_prefix": "yfcc",
+                "valid_num": 231
+            },
+            {
+                "name": "pike_place_market",
+                "bundle_prefix": "yfcc",
+                "valid_num": 394
+            },
+            {
+                "name": "big_ben_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 163
+            },
+            {
+                "name": "sagrada_familia_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 214
+            },
+            {
+                "name": "vatican_museum_ceiling",
+                "bundle_prefix": "yfcc",
+                "valid_num": 58
+            },
+            {
+                "name": "colosseum_interior",
+                "bundle_prefix": "yfcc",
+                "valid_num": 850
+            },
+            {
+                "name": "temple_nara_japan",
+                "bundle_prefix": "yfcc",
+                "valid_num": 830
+            },
+            {
+                "name": "sagrada_familia_3",
+                "bundle_prefix": "yfcc",
+                "valid_num": 170
+            },
+            {
+                "name": "notre_dame_front_facade",
+                "bundle_prefix": "yfcc",
+                "valid_num": 3470
+            },
+            {
+                "name": "sacre_coeur",
+                "bundle_prefix": "yfcc",
+                "valid_num": 1084
+            },
+            {
+                "name": "palace_of_westminster",
+                "bundle_prefix": "yfcc",
+                "valid_num": 875
+            },
+            {
+                "name": "palace_of_versailles_chapel",
+                "bundle_prefix": "yfcc",
+                "valid_num": 136
+            },
+            {
+                "name": "taj_mahal",
+                "bundle_prefix": "yfcc",
+                "valid_num": 1223
+            },
+            {
+                "name": "london_bridge_3",
+                "bundle_prefix": "yfcc",
+                "valid_num": 189
+            },
+            {
+                "name": "statue_of_liberty_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 100
+            },
+            {
+                "name": "palazzo_pubblico",
+                "bundle_prefix": "yfcc",
+                "valid_num": 182
+            },
+            {
+                "name": "pantheon_exterior",
+                "bundle_prefix": "yfcc",
+                "valid_num": 1264
+            },
+            {
+                "name": "petra_jordan",
+                "bundle_prefix": "yfcc",
+                "valid_num": 104
+            },
+            {
+                "name": "piazza_della_signoria",
+                "bundle_prefix": "yfcc",
+                "valid_num": 105
+            },
+            {
+                "name": "paris_opera_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 387
+            },
+            {
+                "name": "piazza_san_marco",
+                "bundle_prefix": "yfcc",
+                "valid_num": 228
+            },
+            {
+                "name": "st_pauls_cathedral",
+                "bundle_prefix": "yfcc",
+                "valid_num": 550
+            },
+            {
+                "name": "lincoln_memorial",
+                "bundle_prefix": "yfcc",
+                "valid_num": 321
+            },
+            {
+                "name": "brandenburg_gate",
+                "bundle_prefix": "yfcc",
+                "valid_num": 1177
+            },
+            {
+                "name": "pantheon_interior",
+                "bundle_prefix": "yfcc",
+                "valid_num": 881
+            },
+            {
+                "name": "florence_cathedral_dome_interior_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 246
+            },
+            {
+                "name": "louvre",
+                "bundle_prefix": "yfcc",
+                "valid_num": 624
+            },
+            {
+                "name": "lincoln_memorial_statue",
+                "bundle_prefix": "yfcc",
+                "valid_num": 745
+            },
+            {
+                "name": "grand_place_brussels_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 330
+            },
+            {
+                "name": "notre_dame_rosary_window",
+                "bundle_prefix": "yfcc",
+                "valid_num": 496
+            },
+            {
+                "name": "national_gallery_london",
+                "bundle_prefix": "yfcc",
+                "valid_num": 290
+            },
+            {
+                "name": "trevi_fountain_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 2654
+            },
+            {
+                "name": "grand_central_terminal_new_york",
+                "bundle_prefix": "yfcc",
+                "valid_num": 216
+            },
+            {
+                "name": "old_town_square_prague_clock",
+                "bundle_prefix": "yfcc",
+                "valid_num": 981
+            },
+            {
+                "name": "mount_rushmore",
+                "bundle_prefix": "yfcc",
+                "valid_num": 124
+            },
+            {
+                "name": "western_wall_jerusalem",
+                "bundle_prefix": "yfcc",
+                "valid_num": 99
+            },
+            {
+                "name": "british_museum",
+                "bundle_prefix": "yfcc",
+                "valid_num": 600
+            },
+            {
+                "name": "st_peters_basilica_interior_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 269
+            },
+            {
+                "name": "st_vitus_cathedral",
+                "bundle_prefix": "yfcc",
+                "valid_num": 144
+            },
+            {
+                "name": "trevi_fountain_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 202
+            },
+            {
+                "name": "westminster_abbey_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 226
+            },
+            {
+                "name": "london_bridge_2",
+                "bundle_prefix": "yfcc",
+                "valid_num": 185
+            },
+            {
+                "name": "florence_cathedral_side",
+                "bundle_prefix": "yfcc",
+                "valid_num": 103
+            },
+            {
+                "name": "big_ben_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 188
+            },
+            {
+                "name": "sistine_chapel_ceiling_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 71
+            },
+            {
+                "name": "st_peters_basilica_interior_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 540
+            },
+            {
+                "name": "blue_mosque_interior_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 432
+            },
+            {
+                "name": "grand_place_brussels_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 406
+            },
+            {
+                "name": "florence_cathedral_dome_interior_1",
+                "bundle_prefix": "yfcc",
+                "valid_num": 317
+            },
+            {
+                "name": "piazza_dei_miracoli",
+                "bundle_prefix": "yfcc",
+                "valid_num": 117
+            }
+        ]
+    }
+}

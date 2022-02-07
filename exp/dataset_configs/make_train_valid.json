@@ -1,0 +1,33 @@
+{
+    "clean_cache": false,
+    "train":
+    {
+        "yfcc":{
+            "dataset_list" : ["big_ben_1"],
+            "node_edge_lmdb_path": null,
+            "img_max_dim": 480,
+            "sampling_num_range": [100,500],
+            "sub_graph_nodes": 30,
+            "sample_res_cache": "train",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false
+        }
+    },
+    "valid":
+    {
+        "yfcc":{
+            "dataset_list" : ["big_ben_2"],
+            "node_edge_lmdb_path": null,
+            "img_max_dim": 400,
+            "sampling_num_range": [50,100],
+            "sub_graph_nodes": 30,
+            "sample_res_cache": null,
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false
+        }
+    }
+}

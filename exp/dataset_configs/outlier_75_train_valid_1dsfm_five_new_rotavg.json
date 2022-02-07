@@ -1,0 +1,46 @@
+{
+    "clean_cache": false,
+    "train":
+    {
+        "1dsfm_five_new":{
+            "dataset_list" : ["Alamo",
+            "Ellis_Island",
+            "Montreal_Notre_Dame",
+            "Piazza_del_Popolo",
+            "Roman_Forum",
+            "Union_Square",
+            "Vienna_Cathedral",
+            "Yorkminster",
+            "Piccadilly"
+        ],
+            "node_edge_lmdb_path": null,
+            "img_max_dim": 400,
+            "sampling_num_range": [200, 300],
+            "sub_graph_nodes": 80,
+            "sample_res_cache": "outlier_75_train_1dsfm_five_new_80rotavg.bin",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false,
+            "node_edge_lmdb_path": "/mnt/Exp_5/onedsfm_train_five_new/node_edge_feat_lmdbs/node_edge_feat.lmdb"
+        }
+    },
+    "valid":
+    {
+        "1dsfm_five_new":{
+            "dataset_list" : ["Madrid_Metropolis",
+                "Gendarmenmarkt",
+                "Tower_of_London"],
+            "node_edge_lmdb_path": null,
+            "img_max_dim": 400,
+            "sampling_num_range": [100,200],
+            "sub_graph_nodes": 80,
+            "sample_res_cache":"outlier_75_valid_1dsfm_five_new_80rotavg.bin",
+            "sampling_undefine_edge": false,
+            "load_img": true,
+            "load_keypt_match": true,
+            "load_node_edge_feat": false,
+            "node_edge_lmdb_path": "/mnt/Exp_5/onedsfm_train_five_new/node_edge_feat_lmdbs/node_edge_feat.lmdb"
+        }
+    }
+}
