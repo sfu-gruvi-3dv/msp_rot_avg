@@ -15,7 +15,7 @@ torch.manual_seed(666)
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--gpu_id", default=1, type=int)
-parser.add_argument("--dataset",  default="./test_config/yfcc_80nodes_big_ben_2.json")
+parser.add_argument("--dataset",  default="./test_config/yfcc_80nodes_petra_jordan.json")
 args = parser.parse_args()
 
 """ Configuration ------------------------------------------------------------------------------------------------------
